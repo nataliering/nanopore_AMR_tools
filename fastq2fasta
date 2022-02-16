@@ -1,0 +1,15 @@
+#!/bin/bash
+#Takes a fastq file and turns it into a fasta
+#Dependency: seqtk (this is really just a wrapper script for this one function from the much wider seqtk toolbox)
+
+if [ "$1" == "-h" ] ; then
+    echo "Usage: fastq2fasta.sh <input.fastq> <output_prefix(will be .fasta) [-h]"
+    exit 0
+fi
+
+if [ "$1" == "--help" ] ; then
+    echo "Usage: fastq2fasta.sh <input.fastq> <output_prefix(will be .fasta) [-h]"
+    exit 0
+fi
+
+seqtk seq -a $1 > $2.fasta
