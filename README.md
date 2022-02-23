@@ -13,3 +13,8 @@ Each of the tools we used can be further optimised; we tended to use the default
 ### Downloading relevant nanopore datasets in fastq format
 **[fasterq-dump (download of reads from SRA)](https://github.com/ncbi/sra-tools)**  
 `fasterq-dump ACCESSION_NUMBER --gzip`
+
+### Adaptor trimming
+**[Porechop](https://github.com/rrwick/Porechop)**  
+`porechop -i INPUT.fastq -o OUTPUT.fastq`
+
