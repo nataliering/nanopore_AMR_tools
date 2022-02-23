@@ -1,5 +1,5 @@
 # A systematic comparison of tools available for predicting antimicrobial resistance from nanopore sequencing reads
-Code and commands used in our manuscript, "A meta-analysis of tools available for predicting antimicrobial resistance from nanopore sequencing reads"
+Code and commands used in our manuscript, "A systematic comparison of tools available for predicting antimicrobial resistance from nanopore sequencing reads"
 
 
 ## PLEASE NOTE: This is still a work-in-progress. Message Natalie Ring for further information.
