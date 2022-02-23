@@ -1,4 +1,4 @@
-# A meta-analysis of tools available for predicting antimicrobial resistance from nanopore sequencing reads
+# A systematic comparison of tools available for predicting antimicrobial resistance from nanopore sequencing reads
 Code and commands used in our manuscript, "A meta-analysis of tools available for predicting antimicrobial resistance from nanopore sequencing reads"
 
 
