@@ -29,11 +29,11 @@ Each of the tools we used can be further optimised; we tended to use the default
 `awk '/^S/{print">"$2"\n"$3}' OUTPUT.gfa | fold > OUTPUT.fasta`
 
 **[Prokka](https://github.com/tseemann/Prokka)**
-`prokka --metagenome --cpus 8 --outdir OUTPUT --prefix OUTPUT --addgenes INPUT_ASSEMBLY.fasta
+`prokka --metagenome --cpus 8 --outdir OUTPUT --prefix OUTPUT --addgenes INPUT_ASSEMBLY.fasta`
 
 ### AMR prediction tools
 **[ABRicate](https://github.com/tseemann/ABRicate)**
-Abricate --fofn FILE_OF_ASSEMBLY_FILE_NAMES.txt > OUTPUT.tsv
-Abricate --summary OUTPUT.tsv > SUMMARY.tsv
+`abricate --fofn FILE_OF_ASSEMBLY_FILE_NAMES.txt > OUTPUT.tsv`                                                                        
+`abricate --summary OUTPUT.tsv > SUMMARY.tsv`
 
 
