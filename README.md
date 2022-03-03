@@ -24,16 +24,26 @@ Each of the tools we used can be further optimised; we tended to use the default
 `flye --meta --threads 8 --out-dir OUTPUT_DIRECTORY --nano-raw INPUT.fastq`
 
 **[Minimap2](https://github.com/lh3/Minimap2) and [Miniasm](https://github.com/lh3/Miniasm)**  
-`minimap2 -x ava-ont -t16 INPUT.fastq INPUT.fastq | gzip -1 > OUTPUT.paf.gz`                                                                                                  
-`miniasm -f INPUT.fastq OUTPUT.paf.gz > OUTPUT.gfa`                                                                                                           
-`awk '/^S/{print">"$2"\n"$3}' OUTPUT.gfa | fold > OUTPUT.fasta`
+`minimap2 -x ava-ont -t16 INPUT.fastq INPUT.fastq | gzip -1 > OUTPUT_PREFIX.paf.gz`                                                                                           
+`miniasm -f INPUT.fastq OUTPUT_PREFIX.paf.gz > OUTPUT_PREFIX.gfa`                                                                                                           
+`awk '/^S/{print">"$2"\n"$3}' OUTPUT_PREFIX.gfa | fold > OUTPUT_PREFIX.fasta`
 
 **[Prokka](https://github.com/tseemann/Prokka)**                                                                                                            
-`prokka --metagenome --cpus 8 --outdir OUTPUT --prefix OUTPUT --addgenes INPUT_ASSEMBLY.fasta`
+`prokka --metagenome --cpus 8 --outdir OUTPUT_DIRECTORY --prefix OUTPUT_PREFIX --addgenes INPUT_ASSEMBLY.fasta`
 
 ### AMR prediction tools                                                                                                                                    
 **[ABRicate](https://github.com/tseemann/ABRicate)**                                                                                                     
-`abricate --fofn FILE_OF_ASSEMBLY_FILE_NAMES.txt > OUTPUT.tsv`                                                                        
-`abricate --summary OUTPUT.tsv > SUMMARY.tsv`
+`abricate --fofn FILE_OF_ASSEMBLY_FILE_NAMES.txt > OUTPUT_PREFIX.tsv`                                                                        
+`abricate --summary OUTPUT_PREFIX.tsv > SUMMARY.tsv`
 
+**[StarAMR](https://github.com/phac-nml/staramr)**                                                                                                            
+`staramr search -o OUTPUT_DIRECTORY INPUT.fasta`
 
+**[ResFinder (read-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                                
+`resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired -ifq INPUT.fastq`
+
+**[ResFinder (assembly-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                            
+`resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired -ifa INPUT_ASSEMBLY.fasta`
+
+**[c-SSTAR](https://github.com/chrisgulvik/c-SSTAR)**                                                                            
+`c-SSTAR -g INPUT_ASSEMBLY.fasta -d /PATH/TO/c-SSTAR/DB/ResGANNOT_srst2.fasta.gz --cpus 8 --outdir OUTPUT_DIRECTORY --report OUTPUT_PREFIX.txt`
