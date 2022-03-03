@@ -24,7 +24,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 `flye --meta --threads 8 --out-dir OUTPUT_DIRECTORY --nano-raw INPUT.fastq`
 
 **[Minimap2](https://github.com/lh3/Minimap2) and [Miniasm](https://github.com/lh3/Miniasm)**  
-minimap2 -x ava-ont -t16 INPUT.fastq INPUT.fastq | gzip -1 > OUTPUT.paf.gz
-miniasm -f INPUT.fastq OUTPUT.paf.gz > OUTPUT.gfa
-awk '/^S/{print">"$2"\n"$3}' OUTPUT.gfa | fold > OUTPUT.fasta
+`minimap2 -x ava-ont -t16 INPUT.fastq INPUT.fastq | gzip -1 > OUTPUT.paf.gz`
+`miniasm -f INPUT.fastq OUTPUT.paf.gz > OUTPUT.gfa`
+`awk '/^S/{print">"$2"\n"$3}' OUTPUT.gfa | fold > OUTPUT.fasta`
 
