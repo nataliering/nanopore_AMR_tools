@@ -19,7 +19,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 `porechop -i INPUT.fastq -o OUTPUT.fastq`
 
 
-### Genome assembly
+### Genome assembly and annotation
 **[Flye](https://github.com/fenderglass/Flye)**  
 `flye --meta --threads 8 --out-dir OUTPUT_DIRECTORY --nano-raw INPUT.fastq`
 
@@ -27,4 +27,13 @@ Each of the tools we used can be further optimised; we tended to use the default
 `minimap2 -x ava-ont -t16 INPUT.fastq INPUT.fastq | gzip -1 > OUTPUT.paf.gz`                                                                                                  
 `miniasm -f INPUT.fastq OUTPUT.paf.gz > OUTPUT.gfa`                                                                                                           
 `awk '/^S/{print">"$2"\n"$3}' OUTPUT.gfa | fold > OUTPUT.fasta`
+
+**[Prokka](https://github.com/tseemann/Prokka)**
+`prokka --metagenome --cpus 8 --outdir OUTPUT --prefix OUTPUT --addgenes INPUT_ASSEMBLY.fasta
+
+### AMR prediction tools
+**[ABRicate](https://github.com/tseemann/ABRicate)**
+Abricate --fofn FILE_OF_ASSEMBLY_FILE_NAMES.txt > OUTPUT.tsv
+Abricate --summary OUTPUT.tsv > SUMMARY.tsv
+
 
