@@ -1,4 +1,4 @@
-# A systematic comparison of tools available for predicting antimicrobial resistance from nanopore sequencing reads
+# A systematic comparison of tools available for predicting antimicrobial resistance using nanopore sequencing reads and paired phenotyping results
 Code and commands used in our manuscript, "A systematic comparison of tools available for predicting antimicrobial resistance from nanopore sequencing reads"
 
 
