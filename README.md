@@ -29,7 +29,10 @@ Each of the tools we used can be further optimised; we tended to use the default
 `awk '/^S/{print">"$2"\n"$3}' OUTPUT.gfa | fold > OUTPUT.fasta`
 
 **[Prokka](https://github.com/tseemann/Prokka)**                                                                                                            
-`prokka --metagenome --cpus 8 --outdir OUTPUT_DIRECTORY --prefix OUTPUT --addgenes INPUT_ASSEMBLY.fasta`
+`prokka --metagenome --cpus 8 --outdir OUTPUT_DIRECTORY --prefix OUTPUT INPUT_ASSEMBLY.fasta`
+
+**[Conversion of Prokka .gff output into format compatible with AMRFinder+](https://github.com/ncbi/amr/issues/24)**
+`perl -pe '/^##FASTA/ && exit; s/(\W)Name=/$1OldName=/i; s/ID=([^;]+)/ID=$1;Name=$1/' OUTPUT.gff>  > OUTPUT.for_amrfinder.gff`
 
 ### AMR prediction tools                                                                                                                                    
 **[ABRicate](https://github.com/tseemann/ABRicate)**                                                                                                     
