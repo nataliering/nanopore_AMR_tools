@@ -39,6 +39,9 @@ Each of the tools we used can be further optimised; we tended to use the default
 `abricate --fofn FILE_OF_ASSEMBLY_FILE_NAMES.txt > OUTPUT.tsv`                                                                        
 `abricate --summary OUTPUT.tsv > SUMMARY.tsv`
 
+**[AMRFinderPlus](https://github.com/ncbi/amr)**                                                                                       
+`amrfinder -p PROKKA_OUTPUT.faa -n INPUT_ASSEMBLY.fasta -g PROKKA_OUTPUT.for_amrfinder.gff --threads 8 -o OUTPUT_DIRECTORY`
+
 **[StarAMR](https://github.com/phac-nml/staramr)**                                                                                                            
 `staramr search -o OUTPUT_DIRECTORY INPUT.fasta`
 
