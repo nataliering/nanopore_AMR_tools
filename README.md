@@ -42,8 +42,8 @@ Each of the tools we used can be further optimised; we tended to use the default
 **[AMRFinderPlus](https://github.com/ncbi/amr)**                                                                                       
 `amrfinder -p PROKKA_OUTPUT.faa -n INPUT_ASSEMBLY.fasta -g PROKKA_OUTPUT.for_amrfinder.gff --threads 8 -o OUTPUT_DIRECTORY`
 
-**[StarAMR](https://github.com/phac-nml/staramr)**                                                                                                            
-`staramr search -o OUTPUT_DIRECTORY INPUT.fasta`
+**[c-SSTAR](https://github.com/chrisgulvik/c-SSTAR)**                                                                            
+`c-SSTAR -g INPUT_ASSEMBLY.fasta -d /PATH/TO/c-SSTAR/DB/ResGANNOT_srst2.fasta.gz --cpus 8 --outdir OUTPUT_DIRECTORY --report OUTPUT.txt`
 
 **[ResFinder (read-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                                
 `resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired -ifq INPUT.fastq`
@@ -51,5 +51,8 @@ Each of the tools we used can be further optimised; we tended to use the default
 **[ResFinder (assembly-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                            
 `resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired -ifa INPUT_ASSEMBLY.fasta`
 
-**[c-SSTAR](https://github.com/chrisgulvik/c-SSTAR)**                                                                            
-`c-SSTAR -g INPUT_ASSEMBLY.fasta -d /PATH/TO/c-SSTAR/DB/ResGANNOT_srst2.fasta.gz --cpus 8 --outdir OUTPUT_DIRECTORY --report OUTPUT.txt`
+**[RGI (assembly-based)](https://github.com/arpcard/rgi)**                                                                                         
+`rgi main --input_sequence INPUT_ASSEMBLY.fasta --output_file OUTPUT.txt --input_type contig --low_quality --include_loose --clean --num_threads 8`
+
+**[StarAMR](https://github.com/phac-nml/staramr)**                                                                                                            
+`staramr search -o OUTPUT_DIRECTORY INPUT.fasta`
