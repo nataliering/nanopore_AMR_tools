@@ -25,7 +25,9 @@ Each of the tools we used can be further optimised; we tended to use the default
 
 **[Minimap2](https://github.com/lh3/Minimap2) and [Miniasm](https://github.com/lh3/Miniasm)**  
 `minimap2 -x ava-ont -t16 INPUT.fastq INPUT.fastq | gzip -1 > OUTPUT.paf.gz`                                                                                           
+
 `miniasm -f INPUT.fastq OUTPUT.paf.gz > OUTPUT.gfa`                                                                                                           
+
 `awk '/^S/{print">"$2"\n"$3}' OUTPUT.gfa | fold > OUTPUT.fasta`
 
 **[Prokka](https://github.com/tseemann/Prokka)**                                                                                                            
@@ -37,6 +39,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 ### AMR prediction tools                                                                                                                                    
 **[ABRicate](https://github.com/tseemann/ABRicate)**                                                                                                     
 `abricate --fofn FILE_OF_ASSEMBLY_FILE_NAMES.txt > OUTPUT.tsv`                                                                        
+
 `abricate --summary OUTPUT.tsv > SUMMARY.tsv`
 
 **[AMRFinderPlus](https://github.com/ncbi/amr)**                                                                                       
