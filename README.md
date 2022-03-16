@@ -55,7 +55,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 `resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired -ifa INPUT_ASSEMBLY.fasta`
 
 **[RGI (assembly-based)](https://github.com/arpcard/rgi)**                                                                                         
-`rgi main --input_sequence INPUT_ASSEMBLY.fasta --output_file OUTPUT.txt --input_type contig --low_quality --include_loose --clean --num_threads 8`
+`rgi main --input_sequence INPUT_ASSEMBLY.fasta --output_file OUTPUT.txt --input_type contig --low_quality --clean --num_threads 8`
 
 **[StarAMR](https://github.com/phac-nml/staramr)**                                                                                                            
 `staramr search -o OUTPUT_DIRECTORY INPUT.fasta`
