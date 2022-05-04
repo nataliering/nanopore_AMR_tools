@@ -48,10 +48,10 @@ Each of the tools we used can be further optimised; we tended to use the default
 **[c-SSTAR](https://github.com/chrisgulvik/c-SSTAR)**                                                                            
 `c-SSTAR -g INPUT_ASSEMBLY.fasta -d /PATH/TO/c-SSTAR/DB/ResGANNOT_srst2.fasta.gz --cpus 8 --outdir OUTPUT_DIRECTORY --report OUTPUT.txt`
 
-**[deepARG (nucleotide annotations](https://bitbucket.org/gusphdproj/deeparg-ss/src/master/)**                                                                        
+**[deepARG (nucleotide annotations)](https://bitbucket.org/gusphdproj/deeparg-ss/src/master/)**                                                                        
 `deeparg predict --model LS --type nucl --input INPUT_ANNOTATIONS.ffn --out OUTPUT --data-path /PATH/TO/DEEPARG_DATA`
 
-**[deepARG (amino acid annotations](https://bitbucket.org/gusphdproj/deeparg-ss/src/master/)**                                                                        
+**[deepARG (amino acid annotations)](https://bitbucket.org/gusphdproj/deeparg-ss/src/master/)**                                                                        
 `deeparg predict --model LS --type prot --input INPUT_ANNOTATIONS.faa --out OUTPUT --data-path /PATH/TO/DEEPARG_DATA`                                                  
 
 **[ResFinder (read-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                                
