@@ -18,6 +18,9 @@ Each of the tools we used can be further optimised; we tended to use the default
 **[Porechop](https://github.com/rrwick/Porechop)**  
 `porechop -i INPUT.fastq -o OUTPUT.fastq`
 
+### Read filtering
+**[Filtlong](https://github.com/rrwick/Filtlong)**  
+`filtlong -t 500000000 INPUT.fastq.gz | gzip > OUTPUT.fastq.gz`
 
 ### Genome assembly and annotation
 **[Flye](https://github.com/fenderglass/Flye)**  
@@ -42,6 +45,9 @@ Each of the tools we used can be further optimised; we tended to use the default
 
 `abricate --summary OUTPUT.tsv > SUMMARY.tsv`
 
+**[abriTAMR](https://github.com/MDU-PHL/abritamr)**                                                                                                     
+`abriTAMR run --contigs INPUT_ASSEMBLY.fasta --prefix OUTPUT_DIRECTORY --species SPECIES(where relevant)` 
+
 **[AMRFinderPlus](https://github.com/ncbi/amr)**                                                                                       
 `amrfinder -p PROKKA_OUTPUT.faa -n INPUT_ASSEMBLY.fasta -g PROKKA_OUTPUT.for_amrfinder.gff --threads 8 -o OUTPUT_DIRECTORY`
 
@@ -64,7 +70,6 @@ Each of the tools we used can be further optimised; we tended to use the default
 `rgi main --input_sequence INPUT_ASSEMBLY.fasta --output_file OUTPUT --input_type contig --low_quality --clean --num_threads 8`
 
 `rgi heatmap -cat drug_class --input /path/to/folder/of/collated/OUTPUT.jsons --output OUTPUT`
-
 
 **[StarAMR](https://github.com/phac-nml/staramr)**                                                                                                            
 `staramr search -o OUTPUT_DIRECTORY INPUT.fasta`
