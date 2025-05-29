@@ -41,9 +41,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 
 ### AMR prediction tools                                                                                                                                    
 **[ABRicate](https://github.com/tseemann/ABRicate)**                                                                                                     
-`abricate --fofn FILE_OF_ASSEMBLY_FILE_NAMES.txt > OUTPUT.tsv`                                                                        
-
-`abricate --summary OUTPUT.tsv > SUMMARY.tsv`
+`abricate --threads 8 --db [ncbi|megares|argannot|card|resfinder] INPUT_ASSEMBLY.fasta > OUTPUT.tsv`                                                                        
 
 **[abriTAMR](https://github.com/MDU-PHL/abritamr)**                                                                                                     
 `abriTAMR run --contigs INPUT_ASSEMBLY.fasta --prefix OUTPUT_DIRECTORY --species SPECIES(where relevant)` 
