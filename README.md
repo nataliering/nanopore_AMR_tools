@@ -33,7 +33,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 
 `awk '/^S/{print">"$2"\n"$3}' OUTPUT.gfa | fold > OUTPUT.fasta`
 
-**[Medaka](https://github.com/nanoporetech/medaka)**
+**[Medaka](https://github.com/nanoporetech/medaka)**                                                                                                                                                                                                        
 `medaka_consensus -i FILTLONG_READS.fastq.gz -d DRAFT_ASSEMBLY.fasta -o OUTPUT_DIRECTORY -t NUM_THREADS`
 
 **[Prokka](https://github.com/tseemann/Prokka)**                                                                                                            
@@ -50,7 +50,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 `amrfinder -a prokka -p PROKKA_OUTPUT.faa -n PROKKA_OUTPUT.fna -g PROKKA_OUTPUT.gff --threads NUM_THREADS -o OUTPUT_DIRECTORY`
 
 **[c-SSTAR](https://github.com/chrisgulvik/c-SSTAR)**                                                                            
-`c-SSTAR -g INPUT_ASSEMBLY.fasta -d /PATH/TO/c-SSTAR/DB/ResGANNOT_srst2.fasta.gz --cpus NUM_THREADS --outdir OUTPUT_DIRECTORY --report OUTPUT.txt`
+`c-SSTAR -g INPUT_ASSEMBLY.fasta -d /PATH/TO/c-SSTAR/DB/ResGANNOT_srst2.fasta.gz --cpus NUM_THREADS --outdir OUTPUT_DIRECTORY`
 
 **[deepARG (nucleotide annotations)](https://bitbucket.org/gusphdproj/deeparg-ss/src/master/)**                                                                        
 `deeparg predict --model LS --type nucl --input INPUT_ANNOTATIONS.ffn --out OUTPUT --data-path /PATH/TO/DEEPARG_DATA`
