@@ -58,12 +58,6 @@ Each of the tools we used can be further optimised; we tended to use the default
 **[deepARG (amino acid annotations)](https://bitbucket.org/gusphdproj/deeparg-ss/src/master/)**                                                                        
 `deeparg predict --model LS --type prot --input INPUT_ANNOTATIONS.faa --out OUTPUT --data-path /PATH/TO/DEEPARG_DATA`                                                  
 
-**[Meta-MARC (read-based)](https://github.com/lakinsm/meta-marc)**                                                                        
-`meta-marc -i INPUT_READS.FASTQ -o OUTPUT -d -m -l 3 -t NUM_THREADS`  
-
-**[Meta-MARC (assembly-based)](https://github.com/lakinsm/meta-marc)**                                                                        
-`meta-marc -i INPUT_ASSEMBLY.FASTA -o OUTPUT -l 3 -t NUM_THREADS` 
-
 **[ResFinder (read-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                                
 `python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifq INPUT.fastq`
 
