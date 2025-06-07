@@ -65,10 +65,10 @@ Each of the tools we used can be further optimised; we tended to use the default
 `python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifa INPUT_ASSEMBLY.fasta`
 
 **[RGI (assembly-based)](https://github.com/arpcard/rgi)**                                                                                         
-`rgi main --input_sequence INPUT_ASSEMBLY.fasta --output_file OUTPUT --input_type contig --low_quality --local --clean --num_threads NUM_THREADS`
+`rgi main --input_sequence INPUT_ASSEMBLY.fasta --output_file OUTPUT --input_type contig --low_quality --clean --num_threads NUM_THREADS`
 
 **[RGI (protein-based)](https://github.com/arpcard/rgi)**                                                                                         
-`rgi main --input_sequence INPUT_ANNOTATIONS.faa --output_file OUTPUT --input_type protein --local --clean --num_threads NUM_THREADS`
+`rgi main --input_sequence INPUT_ANNOTATIONS.faa --output_file OUTPUT --input_type protein --clean --num_threads NUM_THREADS`
 
 **[StarAMR](https://github.com/phac-nml/staramr)**                                                                                                            
 `staramr search -o OUTPUT_DIRECTORY INPUT.fasta`
