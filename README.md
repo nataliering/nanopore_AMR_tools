@@ -39,7 +39,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 **[Prokka](https://github.com/tseemann/Prokka)**                                                                                                            
 `prokka --compliant --metagenome --cpus NUM_THREADS --outdir OUTPUT_DIRECTORY --prefix OUTPUT_PREFIX INPUT_ASSEMBLY.fasta`
 
-### AMR prediction tools                                                                                                                                    
+### AMR prediction tools [species-specific options]                                                                                                                                    
 **[ABRicate](https://github.com/tseemann/ABRicate)**                                                                                                     
 `abricate --threads NUM_THREADS --db [ncbi|megares|argannot|card|resfinder] INPUT_ASSEMBLY.fasta > OUTPUT.tsv`                                                                        
 
@@ -47,7 +47,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 `abriTAMR run --contigs INPUT_ASSEMBLY.fasta --prefix OUTPUT_PREFIX [--species SPECIES]` 
 
 **[AMRFinderPlus](https://github.com/ncbi/amr)**                                                                                       
-`amrfinder -a prokka -p PROKKA_OUTPUT.faa -n PROKKA_OUTPUT.fna -g PROKKA_OUTPUT.gff --threads NUM_THREADS -o OUTPUT_DIRECTORY`
+`amrfinder -a prokka -p PROKKA_OUTPUT.faa -n PROKKA_OUTPUT.fna -g PROKKA_OUTPUT.gff --threads NUM_THREADS -o OUTPUT_DIRECTORY [--organism ORGANISM]`
 
 **[c-SSTAR](https://github.com/chrisgulvik/c-SSTAR)**                                                                            
 `c-SSTAR -g INPUT_ASSEMBLY.fasta -d /PATH/TO/c-SSTAR/DB/ResGANNOT_srst2.fasta.gz --cpus NUM_THREADS --outdir OUTPUT_DIRECTORY > OUTPUT_DIRECTORY/OUTPUT.tsv`
@@ -59,10 +59,10 @@ Each of the tools we used can be further optimised; we tended to use the default
 `deeparg predict --model LS --type prot --input INPUT_ANNOTATIONS.faa --out OUTPUT --data-path /PATH/TO/DEEPARG_DATA`                                                  
 
 **[ResFinder (read-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                                
-`python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifq INPUT.fastq`
+`python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifq INPUT.fastq [-s SPECIES]`
 
 **[ResFinder (assembly-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                            
-`python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifa INPUT_ASSEMBLY.fasta`
+`python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifa INPUT_ASSEMBLY.fasta [-s SPECIES]`
 
 **[RGI (assembly-based)](https://github.com/arpcard/rgi)**                                                                                         
 `rgi main --input_sequence INPUT_ASSEMBLY.fasta --output_file OUTPUT --input_type contig --low_quality --clean --num_threads NUM_THREADS`
@@ -71,4 +71,6 @@ Each of the tools we used can be further optimised; we tended to use the default
 `rgi main --input_sequence INPUT_ANNOTATIONS.faa --output_file OUTPUT --input_type protein --clean --num_threads NUM_THREADS`
 
 **[StarAMR](https://github.com/phac-nml/staramr)**                                                                                                            
-`staramr search -o OUTPUT_DIRECTORY INPUT.fasta`
+`staramr search -o OUTPUT_DIRECTORY INPUT.fasta [--pointfinder-organism ORGANISM]`
+ 
+
