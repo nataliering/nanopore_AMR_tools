@@ -2,6 +2,7 @@
 
 #TO USE: ./AMR_runner.sh [accession]
 
+#Set up conda
 source /opt/mambaforge/etc/profile.d/conda.sh
 
 
