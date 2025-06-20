@@ -2,6 +2,37 @@ import pandas as pd
 import re
 import sys
 
+"""
+This script processes AMR tool outputs to match gene names
+with the antibiotic class to which they may convery resistnace. 
+The script assumes your AMR tool output has been run through Hamronization.
+
+This script has been tested with the outputs of:
+    -ABRicate (with ncbi, card, argannot, resfinder and megares DBs)
+    -starAMR
+    -Resfinder
+    -AMRFinderPlus
+    -c-SSTAR
+    -RGI
+    -DeepARG
+    -AMR++
+    
+Usage:
+    python script_name.py <hamronization_output.tsv>
+
+Dependencies:
+    - pandas
+    - re
+    - sys
+    - "ncbi_reference_table.tsv" from the NCBI reference gene catalogue (https://www.ncbi.nlm.nih.gov/pathogens/refgene/). 
+      The version I used can be downloaded from this github (https://github.com/nataliering/nanopore_AMR_tools) or you 
+      can get the latest version by downloading the table from NCBI for yourself
+
+Output:
+  the same hamronization_output.tsv file you input, but with predicted
+  classes in the antibiotic_class column.
+"""
+
 accession = sys.argv[1]
 
 def clean_gene_name(gene):
