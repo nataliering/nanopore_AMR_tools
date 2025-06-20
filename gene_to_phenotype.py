@@ -7,6 +7,16 @@ This script processes AMR tool outputs to match gene names
 with known phenotypes from the ResFinder database. The script
 assumes your AMR tool output has been run through Hamronization.
 
+This script has been tested with the outputs of:
+    -ABRicate (with ncbi, card, argannot, resfinder and megares DBs)
+    -starAMR
+    -Resfinder
+    -AMRFinderPlus
+    -c-SSTAR
+    -RGI
+    -DeepARG
+    -AMR++
+    
 Usage:
     python script_name.py <hamronization_output.tsv>
 
