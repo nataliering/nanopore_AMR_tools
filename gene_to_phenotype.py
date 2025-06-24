@@ -33,7 +33,9 @@ Output:
   phenotypes in the predicted_phenotypes column.
 """
 
-
+import pandas as pd
+import re
+import sys
 
 accession = sys.argv[1]
 
@@ -52,7 +54,6 @@ def update_predicted_phenotype(tool_output, resfinder_dict):
     if 'predicted_phenotype' not in tool_output.columns:
         tool_output['predicted_phenotype'] = ""
 
-    # Ensure the column is a string type
     tool_output['predicted_phenotype'] = tool_output['predicted_phenotype'].astype(str)
 
     for index, row in tool_output.iterrows():
@@ -66,19 +67,26 @@ def update_predicted_phenotype(tool_output, resfinder_dict):
         for res_gene, phenotype in resfinder_dict.items():
             res_gene_clean = clean_resfinder_gene(res_gene)
             for gene_base in gene_names:
-                if gene_base.startswith(res_gene_clean[:4]) or res_gene_clean.startswith(gene_base):
+                # Ensure substantial matches only
+                if (
+                    len(gene_base) > 2 and
+                    len(res_gene_clean) > 2 and
+                    (gene_base.startswith(res_gene_clean) or res_gene_clean.startswith(gene_base))
+                ):
                     antibiotics = phenotype.split(', ')
                     predicted_antibiotics.update(antibiotics)
+                    print(f"Match found: {res_gene_clean} for {gene_names} -> {antibiotics}")
 
         tool_output.at[index, 'predicted_phenotype'] = ', '.join(sorted(predicted_antibiotics)) if predicted_antibiotics else ""
 
     return tool_output
 
 # Load the phenotypes table and tool results
-resfinder = pd.read_csv('/path/to/phenotypes.txt', sep='\t')
+resfinder = pd.read_csv('/home/nring/phenotypes.txt', sep='\t')
 resfinder['Gene'] = resfinder['Gene_accession no.'].apply(clean_resfinder_gene)
 resfinder_dict = resfinder.set_index('Gene')['Phenotype'].to_dict()
 
 tool_results = pd.read_csv(f'{accession}', sep='\t')
 updated_results = update_predicted_phenotype(tool_results, resfinder_dict)
 updated_results.to_csv(f'{accession}', sep='\t', index=False)
+
