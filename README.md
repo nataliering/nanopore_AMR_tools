@@ -15,14 +15,14 @@ Each of the tools we used can be further optimised; we tended to use the default
 `fasterq-dump --gzip -e NUM_THREADS ACCESSION_NUMBER`
 
 ### Conversion from fast5 to pod5
-**[POD5](https://pod5-file-format.readthedocs.io/en/latest/docs/install.html)
-`pod5 convert fast5 -o [INPUT].pod5 -t [NUM_THREADS] /path/to/*.fast5
+**[POD5](https://pod5-file-format.readthedocs.io/en/latest/docs/install.html)                                                                                                                                             
+`pod5 convert fast5 -o [INPUT].pod5 -t [NUM_THREADS] /path/to/*.fast5`
 
-### Basecalling and demuxing with Dorado v1.0.2 in fast, hac and sup modes
+### Basecalling and demuxing with Dorado v1.0.2 in fast, hac and sup modes                                                                                                                                                  
 **[Dorado](https://github.com/nanoporetech/dorado/)
-`dorado basecaller fast [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK114-24 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`
-`dorado basecaller hac [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK114-24 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`
-`dorado basecaller sup [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK114-24 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`
+`dorado basecaller fast [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK114-24 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`                                                                        
+`dorado basecaller hac [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK114-24 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`                                                                                        
+`dorado basecaller sup [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK114-24 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`                                                         
 
 ### Adaptor trimming
 **[Porechop](https://github.com/rrwick/Porechop)**  
