@@ -68,6 +68,10 @@ Each of the tools we used can be further optimised; we tended to use the default
 **[deepARG (amino acid annotations)](https://bitbucket.org/gusphdproj/deeparg-ss/src/master/)**                                                                        
 `deeparg predict --model LS --type prot --input INPUT_ANNOTATIONS.faa --out OUTPUT --data-path /PATH/TO/DEEPARG_DATA`                                                  
 
+**[deepARG (read-based)](https://bitbucket.org/gusphdproj/deeparg-ss/src/master/)**                                                                        
+`deeparg predict --model SS --type nucl --input INPUT_READS.FASTQ.GZ --out OUTPUT --data-path /PATH/TO/DEEPARG_DATA` 
+
+
 **[ResFinder (read-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                                
 `python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifq INPUT.fastq [-s SPECIES]`
 
