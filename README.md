@@ -57,7 +57,10 @@ Each of the tools we used can be further optimised; we tended to use the default
 `abriTAMR run --contigs INPUT_ASSEMBLY.fasta --prefix OUTPUT_PREFIX [--species SPECIES]` 
 
 **[AMRFinderPlus](https://github.com/ncbi/amr)**                                                                                       
-`amrfinder -a prokka -p PROKKA_OUTPUT.faa -n PROKKA_OUTPUT.fna -g PROKKA_OUTPUT.gff --threads NUM_THREADS -o OUTPUT_DIRECTORY [--organism ORGANISM]`
+`amrfinder -a prokka -p PROKKA_OUTPUT.faa -n PROKKA_OUTPUT.fna -g PROKKA_OUTPUT.gff --threads NUM_THREADS -o OUTPUT_DIRECTORY [--organism ORGANISM]`                                                                                                                   
+                                                                                                                                                                                                                                                                         
+**[AMR++](https://github.com/Microbial-Ecology-Group/AMRplusplus)**                                                                                       
+`nextflow run /path/to/AMRplusplus/main_AMR++.nf --pipeline resistome --reads FILTLONG_READS.fastq.gz --output "OUTPUT_DIRECTORY" --threads NUM_THREADS`
 
 **[c-SSTAR](https://github.com/chrisgulvik/c-SSTAR)**                                                                            
 `c-SSTAR -g INPUT_ASSEMBLY.fasta -d /PATH/TO/c-SSTAR/DB/ResGANNOT_srst2.fasta.gz --cpus NUM_THREADS --outdir OUTPUT_DIRECTORY > OUTPUT_DIRECTORY/OUTPUT.tsv`
