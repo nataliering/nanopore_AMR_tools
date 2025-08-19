@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/nataliering/Strep_methylation/blob/main/strep_methylation_logo.png" width="250" class="center" title="Pipeline logo" alt="Pipeline logo"/>
+  <img src="https://github.com/nataliering/nanopore_AMR_tools/blob/main/AMR_tools_github_logo.png" width="250" class="center" title="Pipeline logo" alt="Pipeline logo"/>
 </p>
 
 
