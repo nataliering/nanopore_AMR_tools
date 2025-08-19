@@ -1,3 +1,11 @@
+
+
+
+<p align="center">
+  <img src="https://github.com/nataliering/Strep_methylation/blob/main/strep_methylation_logo.png" width="250" class="center" title="Pipeline logo" alt="Pipeline logo"/>
+</p>
+
+
 # A systematic comparison of strategies for predicting antimicrobial resistance, using nanopore sequencing reads and paired phenotyping results
 Code and commands used in our manuscript
 
