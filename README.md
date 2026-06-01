@@ -6,13 +6,33 @@
 </p>
 
 
-# A systematic comparison of strategies for predicting antimicrobial resistance, using nanopore sequencing reads and paired phenotyping results
+# Benchmarking nanopore-based strategies for antimicrobial resistance prediction
 Code and commands used in our manuscript
 
 
 ## Abstract
-Antimicrobial resistance (AMR) presents a pressing need to ensure that the right antimicrobials are used to target the right microbes at the right time. Ideally, the appropriate antimicrobial is selected after patient samples have been cultured and assessed with antimicrobial sensitivity testing (AST). However, the time needed for culture-based diagnosis leads to immediate empirical treatment, often with broad-spectrum and/or high-tier antimicrobials. Direct nanopore metagenomic whole genome sequencing to identify the pathogens and predict their antimicrobial resistance is a rapid and patient-side alternative. A limitation of this approach is the inconsistency of in silico predicted AMR phenotypes. Here, we benchmarked the current performance of in silico AMR prediction strategies for nanopore-generated long read data. Using nanopore data paired with AST phenotyping for 201 samples, we assessed the impact of basecalling mode, data volume, and assembly strategy to compare the performance of eight in silico AMR prediction tools with seven AMR databases. We found that basecalling accuracy mode does not affect the overall accuracy of in silico AMR predictions, but assembly strategy and data volume both do. Prediction tools using the ResFinder database scored best for balanced accuracy (0.8 ± 0.02 for both ResFinder and ABRicate), whilst DeepARG scored best for sensitivity (0.65 ± 0.03). However, even the best performing in silico AMR prediction strategy missed some resistance identified by lab-based AST. In silico AMR prediction can therefore supplement lab-based AST, but cannot yet replace it.
-
+Antimicrobial resistance (AMR) presents a pressing need to ensure that the right
+antimicrobials are used to target the right microbes at the right time. Ideally, the
+appropriate antimicrobial is selected after patient samples have been cultured and
+assessed with antimicrobial sensitivity testing (AST). However, the time needed for
+culture-based diagnosis leads to immediate empirical treatment, often with broadspectrum
+and/or high-tier antimicrobials. Direct nanopore metagenomic whole genome
+sequencing to identify pathogens and predict their antimicrobial resistance is a rapid
+and patient-side alternative. A limitation of this approach is potential inconsistencies in
+in silico predicted AMR phenotypes. Here, we benchmarked the current performance
+of in silico AMR prediction strategies for nanopore-generated long read data. Using
+nanopore data paired with AST phenotyping for 201 samples representing 27 bacterial
+species, we assessed the impact of basecalling mode, data volume, and assembly
+strategy, and compared the performance of eight in silico AMR prediction tools with
+seven AMR databases. We found that basecalling accuracy mode does not
+significantly affect the overall accuracy of in silico AMR predictions, but assembly
+strategy and data volume both do. Prediction tools using the ResFinder database
+scored best for balanced accuracy (0.80 ± 0.02 for both ResFinder and ABRicate),
+whilst DeepARG scored best for sensitivity (0.65 ± 0.03); predictions were more
+accurate for some antibiotic classes and genera than others. However, even the best
+performing in silico AMR prediction strategy missed some resistance identified by labbased
+AST. We conclude therefore that, currently, in silico AMR prediction can
+supplement lab-based AST, but cannot yet replace it.
 
 ## Commands for tools mentioned in manuscript
 Each of the tools we used can be further optimised; we tended to use the default settings in most cases, often exactly as recommended in the tool's README.
