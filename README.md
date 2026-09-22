@@ -92,7 +92,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 `abriTAMR run --contigs INPUT_ASSEMBLY.fasta --prefix OUTPUT_PREFIX [--species SPECIES]` 
 
 **[AMRFinderPlus](https://github.com/ncbi/amr)**                                                                                       
-`amrfinder -a prokka -p PROKKA_OUTPUT.faa -n PROKKA_OUTPUT.fna -g PROKKA_OUTPUT.gff --threads NUM_THREADS -o OUTPUT_DIRECTORY [--organism ORGANISM]`                                                                       
+`amrfinder -a prokka -p PROKKA_OUTPUT.faa -n PROKKA_OUTPUT.fna -g PROKKA_OUTPUT.gff --threads NUM_THREADS -o OUTPUT_FILE [--organism ORGANISM]`                                                                       
 
 N.B. AMRFinderPlus was used with the Prokka-generated protein FASTA, nucleotide FASTA and GFF files, using the -a prokka option to specify the annotation format, because Prokka GFF files are not interpreted correctly by the default parser, as per NCBI's own documentation.
                                                                                                                                                                                                                                                                          
