@@ -40,15 +40,21 @@ Each of the tools we used can be further optimised; we tended to use the default
 **[fasterq-dump (download of reads from SRA)](https://github.com/ncbi/sra-tools)**  
 `fasterq-dump --gzip -e NUM_THREADS ACCESSION_NUMBER`
 
-### Conversion from fast5 to pod5
+### Conversion from fast5 to pod5 where necessary
 **[POD5](https://pod5-file-format.readthedocs.io/en/latest/docs/install.html)**                                                                                                                                             
 `pod5 convert fast5 -o [INPUT].pod5 -t [NUM_THREADS] /path/to/*.fast5`
 
-### Basecalling and demuxing with Dorado v1.0.2 in fast, hac and sup modes                                                                                                                                                  
+### Basecalling and demuxing with Dorado v1.0.2 in fast, hac and sup modes for R10.4.1 samples. Model selection (e.g. dna_r10.4.1_e8_sup@v3.6 was carried out automatically by Dorado)                                                                                                                               
 **[Dorado](https://github.com/nanoporetech/dorado/)**                                                                                                                                                                                                      
 `dorado basecaller fast [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK114-24 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`                                                                        
 `dorado basecaller hac [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK114-24 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`                                                                                        
 `dorado basecaller sup [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK114-24 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`                                                         
+
+### Basecalling and demuxing with Dorado v0.9.6 in fast, hac and sup modes for R9.4.1 samples. Model selection (e.g. dna_r9.4.1_e8_sup@v3.6 was carried out automatically by Dorado)                                                                                                                                                  
+**[Dorado](https://github.com/nanoporetech/dorado/)**                                                                                                                                                                                                      
+`dorado basecaller fast [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK004 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`                                                                        
+`dorado basecaller hac [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK004 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq`                                                                                        
+`dorado basecaller sup [INPUT_FOLDER] --device auto --recursive --kit-name SQK-RBK004 | dorado demux --output-dir [OUTPUT] --no-classify --emit-fastq` 
 
 ### Adaptor trimming
 **[Porechop](https://github.com/rrwick/Porechop)**  
@@ -102,10 +108,10 @@ Each of the tools we used can be further optimised; we tended to use the default
 
 
 **[ResFinder (read-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                                
-`python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifq INPUT.fastq [-s SPECIES]`
+`python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifq INPUT.fastq [-s SPECIES] [--point]`
 
 **[ResFinder (assembly-based)](https://bitbucket.org/genomicepidemiology/resfinder/src/master/)**                                                                            
-`python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifa INPUT_ASSEMBLY.fasta [-s SPECIES]`
+`python -m resfinder -o OUTPUT_DIRECTORY -l 0.6 -t 0.8 --acquired --nanopore -ifa INPUT_ASSEMBLY.fasta [-s SPECIES] [--point]`
 
 **[RGI (assembly-based)](https://github.com/arpcard/rgi)**                                                                                         
 `rgi main --input_sequence INPUT_ASSEMBLY.fasta --output_file OUTPUT --input_type contig --low_quality --clean --num_threads NUM_THREADS`
