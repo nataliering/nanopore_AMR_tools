@@ -34,10 +34,6 @@ performing in silico AMR prediction strategy missed some resistance identified b
 AST. We conclude therefore that, currently, in silico AMR prediction can
 supplement lab-based AST, but cannot yet replace it.
 
-## Commands for tools mentioned in manuscript
-Each of the tools we used can be further optimised; we tended to use the default settings in most cases, often exactly as recommended in the tool's README.
-
-
 ## Analysis workflow
 
 The overall analysis followed the workflow below. Individual commands and software versions are documented in the sections that follow.
@@ -54,6 +50,9 @@ The overall analysis followed the workflow below. Individual commands and softwa
 8. The harmonised predictions were compared with the corresponding phenotypic AST ground-truth table using a Python script, generating a combined results dataframe.
 9. Python and R scripts were used to calculate, summarise and visualise the performance metrics.
 
+
+## Commands for tools used in this study
+Each of the tools we used can be further optimised; we tended to use the default settings in most cases, often exactly as recommended in the tool's README.
 
 ### Downloading relevant nanopore datasets in fastq format
 **[fasterq-dump (download of reads from SRA)](https://github.com/ncbi/sra-tools)**  
