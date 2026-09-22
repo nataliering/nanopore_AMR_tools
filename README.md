@@ -78,7 +78,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 
 `awk '/^S/{print">"$2"\n"$3}' OUTPUT.gfa | fold > OUTPUT.fasta`
 
-**[Medaka](https://github.com/nanoporetech/medaka)**                                                                                                                                                                                                        
+**[Medaka](https://github.com/nanoporetech/medaka) with automatic model selection**                                                                                                                                                                                                        
 `medaka_consensus -i FILTLONG_READS.fastq.gz -d DRAFT_ASSEMBLY.fasta -o OUTPUT_DIRECTORY -t NUM_THREADS`
 
 **[Prokka](https://github.com/tseemann/Prokka)**                                                                                                            
