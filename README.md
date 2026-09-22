@@ -38,8 +38,8 @@ supplement lab-based AST, but cannot yet replace it.
 
 The overall analysis followed the workflow below. Individual commands and software versions are documented in the sections that follow.
 
-1.Data was downloaded from NCBI, where relevant
-2. Basecalling (where raw signal data were available; otherwise, previously basecalled reads were used).
+1.Data was downloaded from NCBI, where relevant                                                                                         
+2. Basecalling (where raw signal data were available; otherwise, previously basecalled reads were used).                                                                                    
 3. Adapter trimming with Porechop.
 4. Read filtering with Filtlong for datasets exceeding 500 Mb, retaining up to 500 Mb for the main benchmark. Separate target volumes of 250, 100, 50 and 25 Mb were used for the data-volume analysis.
 5. AMR prediction using one of the following input routes:
