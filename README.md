@@ -38,17 +38,17 @@ supplement lab-based AST, but cannot yet replace it.
 
 The overall analysis followed the workflow below. Individual commands and software versions are documented in the sections that follow.
 
-1.Data was downloaded from NCBI, where relevant                                                                                         
-2. Basecalling (where raw signal data were available; otherwise, previously basecalled reads were used).                                                                                    
-3. Adapter trimming with Porechop.
-4. Read filtering with Filtlong for datasets exceeding 500 Mb, retaining up to 500 Mb for the main benchmark. Separate target volumes of 250, 100, 50 and 25 Mb were used for the data-volume analysis.
-5. AMR prediction using one of the following input routes:
-   - **Read-based:** filtered FASTQ reads supplied directly to compatible AMR prediction tools.
-   - **Assembly-based:** filtered reads assembled using Miniasm or Flye. Flye assemblies were additionally polished with Medaka to produce a third assembly type. Assemblies were annotated with Prokka, and the appropriate contig and/or annotation files were supplied to each AMR tool.
-6. AMR tool outputs were harmonised using HAMRonization.
-7. Detected resistance determinants were mapped to antibiotic phenotypes and classes using `gene_to_phenotype.py` and `gene_to_class.py`.
-8. The harmonised predictions were compared with the corresponding phenotypic AST ground-truth table using a Python script, generating a combined results dataframe.
-9. Python and R scripts were used to calculate, summarise and visualise the performance metrics.
+1. Data downloaded from NCBI, where relevant                                                                                         
+2. Basecalling (where raw signal data were available; otherwise, previously basecalled reads were used)                                                                                    
+3. Adapter trimming with Porechop                                                                                                                                                      
+4. Read filtering with Filtlong for datasets exceeding 500 Mb, retaining up to 500 Mb for the main benchmark. Separate target volumes of 250, 100, 50 and 25 Mb were used for the data-volume analysis                                                                            
+5. AMR prediction using one of the following input routes:                                                                                                                                                           
+   - **Read-based:** filtered FASTQ reads supplied directly to compatible AMR prediction tools                                                                                                                      
+   - **Assembly-based:** filtered reads assembled using Miniasm or Flye. Flye assemblies were additionally polished with Medaka to produce a third assembly type. Assemblies were annotated with Prokka, and the appropriate contig and/or annotation files were supplied to each AMR tool                                                                                                                                                                                   
+6. AMR tool outputs were harmonised using HAMRonization                                                                                                                                                                        
+7. Detected resistance determinants were mapped to antibiotic phenotypes and classes using `gene_to_phenotype.py` and `gene_to_class.py`                                                                                                              
+8. The harmonised predictions were compared with the corresponding phenotypic AST ground-truth table using a Python script, generating a combined results dataframe                                                                                                  
+9. Python and R scripts were used to calculate, summarise and visualise the performance metrics                                                                                                                                                                
 
 
 ## Commands for tools used in this study
