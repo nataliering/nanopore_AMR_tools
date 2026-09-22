@@ -61,7 +61,7 @@ Each of the tools we used can be further optimised; we tended to use the default
 `porechop -i INPUT.fastq -o OUTPUT.fastq --threads NUM_THREADS --format fastq.gz`
 
 ### Read filtering
-**[Filtlong](https://github.com/rrwick/Filtlong)**  
+**[Filtlong](https://github.com/rrwick/Filtlong) for 500 Mb output. -t was changed accordingly to produce 250 Mb, 100 Mb, 50 Mb and 25 Mb for volume analysis **  
 `filtlong -t 500000000 INPUT.fastq.gz | gzip > OUTPUT.fastq.gz`
 
 ### Genome assembly, polishing and annotation
