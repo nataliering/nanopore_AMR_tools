@@ -93,7 +93,8 @@ Each of the tools we used can be further optimised; we tended to use the default
 
 **[AMRFinderPlus](https://github.com/ncbi/amr)**                                                                                       
 `amrfinder -a prokka -p PROKKA_OUTPUT.faa -n PROKKA_OUTPUT.fna -g PROKKA_OUTPUT.gff --threads NUM_THREADS -o OUTPUT_DIRECTORY [--organism ORGANISM]`                                                                       
-AMRFinderPlus was supplied with the Prokka-generated protein FASTA, nucleotide FASTA and GFF files, using the -a prokka option to specify the annotation format, because Prokka GFF files are not interpreted correctly by the default parser, as per NCBI's own documentation.
+
+N.B.AMRFinderPlus was supplied with the Prokka-generated protein FASTA, nucleotide FASTA and GFF files, using the -a prokka option to specify the annotation format, because Prokka GFF files are not interpreted correctly by the default parser, as per NCBI's own documentation.
                                                                                                                                                                                                                                                                          
 **[AMR++](https://github.com/Microbial-Ecology-Group/AMRplusplus)**                                                                                       
 `nextflow run /path/to/AMRplusplus/main_AMR++.nf --pipeline resistome --reads FILTLONG_READS.fastq.gz --output "OUTPUT_DIRECTORY" --threads NUM_THREADS`
