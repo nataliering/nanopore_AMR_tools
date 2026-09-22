@@ -65,8 +65,11 @@ Each of the tools we used can be further optimised; we tended to use the default
 `filtlong -t 500000000 INPUT.fastq.gz | gzip > OUTPUT.fastq.gz`
 
 ### Genome assembly, polishing and annotation
-**[Flye](https://github.com/fenderglass/Flye)**  
+**[Flye](https://github.com/fenderglass/Flye) for 50 metagenomic samples**  
 `flye --meta --threads NUM_THREADS --out-dir OUTPUT_DIRECTORY --nano-raw INPUT.fastq`
+
+**[Flye](https://github.com/fenderglass/Flye) for 151 monocultured isolate samples**  
+`flye --threads NUM_THREADS --out-dir OUTPUT_DIRECTORY --nano-raw INPUT.fastq`
 
 **[Minimap2](https://github.com/lh3/Minimap2) and [Miniasm](https://github.com/lh3/Miniasm)**  
 `minimap2 -x ava-ont -t[NUM_THREADS] INPUT.fastq INPUT.fastq | gzip -1 > OUTPUT.paf.gz`                                                                                           
